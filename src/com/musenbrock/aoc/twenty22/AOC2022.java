@@ -8,11 +8,11 @@ import java.util.List;
 public class AOC2022 {
   private Writer writer = new StdoutWriter();
 
-
   public static void main(String[] args) throws IOException {
     AOC2022 aoc2022 = new AOC2022();
 
     aoc2022.day01();
+    aoc2022.day02();
   }
 
   private void day01() throws IOException {
@@ -33,6 +33,16 @@ public class AOC2022 {
     writer.write("Elves " + topThreeElves + " are carrying total " + topThreeCalories + " calories.");
   }
 
+  private void day02() throws IOException {
+    Day02 day02 = new Day02();
+
+    writeDayHeader(2);
+
+    int overallGameResult = day02.getOverallScore();
+
+    writer.write("Game result: " + overallGameResult);
+  }
+
   /**
    * Print a header for a day.
    *
@@ -41,5 +51,4 @@ public class AOC2022 {
   private void writeDayHeader(int day) throws IOException {
     writer.write("======= Day " + day + " ========");
   }
-
 }
