@@ -1,9 +1,9 @@
 package com.musenbrock.aoc.twenty22;
 
-import com.musenbrock.aoc.twenty22.input.InputFiles;
 import com.musenbrock.aoc.twenty22.output.StdoutWriter;
 import com.musenbrock.aoc.twenty22.output.Writer;
 import java.io.IOException;
+import java.util.List;
 
 public class AOC2022 {
   private Writer writer = new StdoutWriter();
@@ -22,8 +22,15 @@ public class AOC2022 {
 
     int elfIndexMaxCarrying = day01.getElfMaxCarrying();
     int calories = day01.getElvesCarrying(elfIndexMaxCarrying);
+    int elfMaxCarrying = elfIndexMaxCarrying + 1;
 
     writer.write("Elf " + (elfIndexMaxCarrying + 1) + " is carrying total " + calories + " calories.");
+
+    List<Integer> topThreeElvesIndices = day01.getElvesMaxCarrying(3);
+    int topThreeCalories = day01.getElvesCarrying(topThreeElvesIndices);
+    List<Integer> topThreeElves = topThreeElvesIndices.stream().map(i -> i + 1).toList();
+
+    writer.write("Elves " + topThreeElves + " are carrying total " + topThreeCalories + " calories.");
   }
 
   /**
