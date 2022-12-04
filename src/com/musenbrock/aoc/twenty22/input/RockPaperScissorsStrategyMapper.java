@@ -10,8 +10,8 @@ import com.musenbrock.aoc.twenty22.rockpaperscissors.RockPaperScissorsStrategy;
 public class RockPaperScissorsStrategyMapper {
   public static RockPaperScissors fromStrategy(String code) {
     return switch (code) {
-      case "A", "Y" -> ROCK;
-      case "B", "X" -> PAPER;
+      case "A", "X" -> ROCK;
+      case "B", "Y" -> PAPER;
       case "C", "Z" -> SCISSORS;
       default -> throw new InvalidInputException("code: " + code);
     };
