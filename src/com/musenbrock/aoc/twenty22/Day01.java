@@ -28,11 +28,24 @@ public class Day01 {
     return caloriesPerElf.getOrDefault(index, -1);
   }
 
+  public int getElvesCarrying(List<Integer> indices) {
+    return indices.stream().mapToInt(index -> caloriesPerElf.getOrDefault(index, 0)).sum();
+  }
+
   public int getElfMaxCarrying() {
     return caloriesPerElf.entrySet()
                          .stream()
                          .max(Comparator.comparingInt(Map.Entry::getValue))
                          .orElseGet(() -> Map.entry(-1, -1))
                          .getKey();
+  }
+
+  public List<Integer> getElvesMaxCarrying(int numberOfTopElves) {
+    return caloriesPerElf.entrySet()
+                         .stream()
+                         .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                         .limit(numberOfTopElves)
+                         .map(Map.Entry::getKey)
+                         .toList();
   }
 }
