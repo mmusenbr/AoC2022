@@ -9,23 +9,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ElfCaloriesInputReader {
   public static Map<Integer, List<Integer>> readElvesCalories() throws IOException {
-    AtomicInteger elve = new AtomicInteger(0);
+    final AtomicInteger elf = new AtomicInteger(0);
 
-    final Map<Integer, List<Integer>> elfesCalories = new HashMap<>();
+    final Map<Integer, List<Integer>> elvesCalories = new HashMap<>();
 
     FileReader.readInputFile(InputFiles.DAY_01).forEach(line -> {
       if (line.isBlank()) {
-        elve.incrementAndGet();
-        elfesCalories.put(elve.get(), new ArrayList<>());
+        elf.incrementAndGet();
+        elvesCalories.put(elf.get(), new ArrayList<>());
       } else {
-        elfesCalories.computeIfAbsent(elve.get(), k -> new ArrayList<>()).add(Integer.valueOf(line));
+        elvesCalories.computeIfAbsent(elf.get(), k -> new ArrayList<>()).add(Integer.valueOf(line));
       }
     });
 
-    return elfesCalories;
-  }
-
-  public static List<Integer> readElvesCalories(int elve) throws IOException {
-    return readElvesCalories().getOrDefault(elve, new ArrayList<>());
+    return elvesCalories;
   }
 }
