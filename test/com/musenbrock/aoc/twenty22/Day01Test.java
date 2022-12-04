@@ -11,18 +11,22 @@ public class Day01Test {
   void caloriesPerElf() throws IOException {
     useExampleInput();
 
-    Assertions.assertEquals(6000, Day01.getElvesCarrying(0));
-    Assertions.assertEquals(4000, Day01.getElvesCarrying(1));
-    Assertions.assertEquals(11000, Day01.getElvesCarrying(2));
-    Assertions.assertEquals(24000, Day01.getElvesCarrying(3));
-    Assertions.assertEquals(10000, Day01.getElvesCarrying(4));
+    Day01 day01 = new Day01();
+
+    Assertions.assertEquals(6000, day01.getElvesCarrying(0));
+    Assertions.assertEquals(4000, day01.getElvesCarrying(1));
+    Assertions.assertEquals(11000, day01.getElvesCarrying(2));
+    Assertions.assertEquals(24000, day01.getElvesCarrying(3));
+    Assertions.assertEquals(10000, day01.getElvesCarrying(4));
   }
 
   @Test
   void elfMaxCalories() throws IOException {
     useExampleInput();
 
-    Assertions.assertEquals(3,  Day01.getElfMaxCarrying());
+    Day01 day01 = new Day01();
+
+    Assertions.assertEquals(3, day01.getElfMaxCarrying());
   }
 
   @AfterEach
