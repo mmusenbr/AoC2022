@@ -38,9 +38,11 @@ public class AOC2022 {
 
     writeDayHeader(2);
 
-    int overallGameResult = day02.getOverallScore();
+    int overallGameResultViaOwnHandStrategy = day02.getOverallScoreViaOwnHandStrategy();
+    writer.write("Game result via OwnHandStrategy: " + overallGameResultViaOwnHandStrategy);
 
-    writer.write("Game result: " + overallGameResult);
+    int overallGameResultViaExpectedResultStrategy = day02.getOverallScoreViaExpectedResultStrategy();
+    writer.write("Game result via ExpectedResultStrategy: " + overallGameResultViaExpectedResultStrategy);
   }
 
   /**

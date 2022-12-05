@@ -8,23 +8,43 @@ import org.junit.jupiter.api.Test;
 
 class Day02Test {
   @Test
-  void scorePerGame() throws IOException {
+  void scorePerGameViaOwnHandStrategy() throws IOException {
     useExampleInput();
 
     Day02 day02 = new Day02();
 
-    Assertions.assertEquals(8, day02.getScoreOfGame(0));
-    Assertions.assertEquals(1, day02.getScoreOfGame(1));
-    Assertions.assertEquals(6, day02.getScoreOfGame(2));
+    Assertions.assertEquals(8, day02.getScoreOfGameViaOwnHandStrategy(0));
+    Assertions.assertEquals(1, day02.getScoreOfGameViaOwnHandStrategy(1));
+    Assertions.assertEquals(6, day02.getScoreOfGameViaOwnHandStrategy(2));
   }
 
   @Test
-  void overallScore() throws IOException {
+  void overallScoreViaOwnHandStrategy() throws IOException {
     useExampleInput();
 
     Day02 day02 = new Day02();
 
-    Assertions.assertEquals(15, day02.getOverallScore());
+    Assertions.assertEquals(15, day02.getOverallScoreViaOwnHandStrategy());
+  }
+
+  @Test
+  void scorePerGameViaExpectedResultStrategy() throws IOException {
+    useExampleInput();
+
+    Day02 day02 = new Day02();
+
+    Assertions.assertEquals(4, day02.getScoreOfGameViaExpectedResultStrategy(0));
+    Assertions.assertEquals(1, day02.getScoreOfGameViaExpectedResultStrategy(1));
+    Assertions.assertEquals(7, day02.getScoreOfGameViaExpectedResultStrategy(2));
+  }
+
+  @Test
+  void overallScoreViaExpectedResultStrategy() throws IOException {
+    useExampleInput();
+
+    Day02 day02 = new Day02();
+
+    Assertions.assertEquals(12, day02.getOverallScoreViaExpectedResultStrategy());
   }
 
   @AfterEach
